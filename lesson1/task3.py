@@ -6,7 +6,7 @@ ch2 = ord(input('ch2 = '))
 
 ch1 = ch1 - ord('a') + 1
 ch2 = ch2 - ord('a') + 1
-dist = abs(ch2 - ch1 - 1)
+dist = abs(ch2 - ch1) - 1
 
 print(f'Первая буква стоит на {ch1} месте алфавита')
 print(f'Вторая буква стоит на {ch2} месте алфавита')

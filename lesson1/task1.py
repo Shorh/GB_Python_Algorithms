@@ -6,8 +6,8 @@ a1 = a % 10
 a2 = (a % 100 - a1) / 10
 a3 = (a - a1 - a2 * 10) / 100
 
-sum = a1 + a2 + a3
+summ = a1 + a2 + a3
 mult = a1 * a2 * a3
 
-print(f'Сумма цифр: {sum}')
+print(f'Сумма цифр: {summ}')
 print(f'Произведение цифр: {mult}')

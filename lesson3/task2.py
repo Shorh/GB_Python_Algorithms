@@ -8,10 +8,10 @@ size = 10
 min_item = 0
 max_item = 100
 array = [random.randint(min_item, max_item) for _ in range(size)]
-print(f'Исходный массив: {array}')
+print(f'Исходный массив: \n{array}')
 
 even = []
 for i in range(len(array)):
     if array[i] % 2 == 0:
         even.append(i)
-print(f'Четные элементы распологаются на следующих позициях: {even}')
+print(f'Четные элементы распологаются на следующих позициях: \n{even}')

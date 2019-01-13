@@ -4,14 +4,20 @@
 
 import random
 
-size = 10
-min_item = 0
-max_item = 100
-array = [random.randint(min_item, max_item) for _ in range(size)]
+SIZE = 10
+MIN_ITEM = 0
+MAX_ITEM = 100
+
+array = [random.randint(MIN_ITEM, MAX_ITEM) for _ in range(SIZE)]
 print(f'Исходный массив: \n{array}')
 
-even = []
-for i in range(len(array)):
-    if array[i] % 2 == 0:
-        even.append(i)
+# Вариант 1
+even = [i for i in range(len(array)) if array[i] % 2 == 0]
+
+# Вариант 2
+# even = []
+# for i in range(len(array)):
+#     if array[i] % 2 == 0:
+#         even.append(i)
+
 print(f'Четные элементы распологаются на следующих позициях: \n{even}')

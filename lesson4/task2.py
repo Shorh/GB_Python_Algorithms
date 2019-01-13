@@ -44,11 +44,16 @@ def prime(n):
 # 100 loops, best of 3: 2.9 msec per loop       - 1 000 элемент
 # 100 loops, best of 3: 60.7 msec per loop      - 10 000 элемент
 
-# cProfile.run('prime(100000)')
-# 1    0.000    0.000    0.000    0.000 task2.py:16(prime)      - 10 элемент
-# 1    0.000    0.000    0.000    0.000 task2.py:16(prime)      - 100 элемент
-# 1    0.009    0.009    0.009    0.009 task2.py:16(prime)      - 1 000 элемент
-# 1    0.208    0.208    0.209    0.209 task2.py:16(prime)      - 10 000 элемент
+
+# cProfile.run('prime(10)')
+# cProfile.run('prime(100)')
+# cProfile.run('prime(1000)')
+# cProfile.run('prime(10000)')
+# ncalls  tottime  percall  cumtime  percall filename:lineno(function)
+#      1    0.000    0.000    0.001    0.001 task2.py:17(prime)      - 10 элемент
+#      1    0.000    0.000    0.000    0.000 task2.py:17(prime)      - 100 элемент
+#      1    0.005    0.005    0.005    0.005 task2.py:17(prime)      - 1 000 элемент
+#      1    0.071    0.071    0.076    0.076 task2.py:17(prime)      - 10 000 элемент
 
 
 # Решето Эратосфена
@@ -76,11 +81,16 @@ def prime_sieve(n):
 # 100 loops, best of 3: 3.01 msec per loop      - 1 000 элемент
 # 100 loops, best of 3: 79.9 msec per loop      - 10 000 элемент
 
-# cProfile.run('prime_sieve(100000)')
-# 1    0.000    0.000    0.000    0.000 task2.py:46(prime_sieve)      - 10 элемент
-# 1    0.000    0.000    0.000    0.000 task2.py:46(prime_sieve)      - 100 элемент
-# 1    0.003    0.003    0.004    0.004 task2.py:46(prime_sieve)      - 1 000 элемент
-# 1    0.047    0.047    0.060    0.060 task2.py:46(prime_sieve)      - 10 000 элемент
+
+# cProfile.run('prime_sieve(10)')
+# cProfile.run('prime_sieve(100)')
+# cProfile.run('prime_sieve(1000)')
+# cProfile.run('prime_sieve(10000)')
+# ncalls  tottime  percall  cumtime  percall filename:lineno(function)
+#      1    0.000    0.000    0.000    0.000 task2.py:58(prime_sieve)      - 10 элемент
+#      1    0.000    0.000    0.000    0.000 task2.py:58(prime_sieve)      - 100 элемент
+#      1    0.005    0.005    0.006    0.006 task2.py:58(prime_sieve)      - 1 000 элемент
+#      1    0.040    0.040    0.050    0.050 task2.py:58(prime_sieve)      - 10 000 элемент
 
 
 # def test_prime(func):

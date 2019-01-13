@@ -3,10 +3,11 @@
 
 import random
 
-size = 10
-min_item = -100
-max_item = 100
-array = [random.randint(min_item, max_item) for _ in range(size)]
+SIZE = 10
+MIN_ITEM = 0
+MAX_ITEM = 100
+
+array = [random.randint(MIN_ITEM, MAX_ITEM) for _ in range(SIZE)]
 print(f'Исходный массив: \n{array}')
 
 max_elem = float('-inf')

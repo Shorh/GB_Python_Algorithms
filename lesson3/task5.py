@@ -3,18 +3,27 @@
 
 import random
 
-size = 10
-min_item = 0
-max_item = 100
-array = [random.randint(min_item, max_item) for _ in range(size)]
+SIZE = 10
+MIN_ITEM = 0
+MAX_ITEM = 100
+
+array = [random.randint(MIN_ITEM, MAX_ITEM) for _ in range(SIZE)]
 print(f'Исходный массив: \n{array}')
 
-min_1 = min_2 = float('inf')
-for a in array:
-    if a < min_1:
-        min_1 = a
-    elif a < min_2:
-        min_2 = a
+if array[0] < array[1]:
+    min_1, min_2 = 0, 1
+else:
+    min_1, min_2 = 1, 0
 
-print(f'Первое минимальное значение :{min_1}')
-print(f'Второе минимальное значение :{min_2}')
+for i in range(2, len(array)):
+    if array[i] < array[min_1]:
+        spam = min_1
+        min_1 = i
+        if array[spam] < array[min_2]:
+            min_2 = spam
+
+    elif array[i] < array[min_2]:
+        min_2 = i
+
+print(f'Первое минимальное значение: {array[min_1]} на {min_1} позиции')
+print(f'Второе минимальное значение: {array[min_2]} на {min_2} позиции')

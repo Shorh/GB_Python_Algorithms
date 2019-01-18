@@ -9,6 +9,7 @@
 
 
 import cProfile
+from collections import deque
 
 
 # для расчета времени выполнения алгоритма
@@ -93,9 +94,9 @@ def reverse_loop_2(n):
 
     return int(n_rev)
 
-# 100 loops, best of 3: 5.56 usec per loop      - 10 элементов
-# 100 loops, best of 3: 5.48 usec per loop      - 100 элементов
-# 100 loops, best of 3: 116 usec per loop       - 1 000 элементов
+# 100 loops, best of 3: 1.86 usec per loop      - 10 элементов
+# 100 loops, best of 3: 7.74 usec per loop      - 100 элементов
+# 100 loops, best of 3: 117 usec per loop       - 1 000 элементов
 # 100 loops, best of 3: 2.89 msec per loop      - 10 000 элементов
 
 # cProfile.run('reverse_loop_2(3)')
@@ -117,16 +118,41 @@ def reverse_slice(n):
     n_rev = str(n_num)[::-1]
     return int(n_rev)
 
-# 100 loops, best of 3: 0.892 usec per loop      - 10 элементов
-# 100 loops, best of 3: 1.44 usec per loop       - 100 элементов
-# 100 loops, best of 3: 17.6 usec per loop       - 1 000 элементов
-# 100 loops, best of 3: 1.39 msec per loop       - 10 000 элементов
+# 100 loops, best of 3: 0.811 usec per loop      - 10 элементов
+# 100 loops, best of 3: 1.25 usec per loop       - 100 элементов
+# 100 loops, best of 3: 18.3 usec per loop       - 1 000 элементов
+# 100 loops, best of 3: 1.44 msec per loop       - 10 000 элементов
 
 # cProfile.run('reverse_slice(3)')
 # 1    0.000    0.000    0.000    0.000 task1.py:107(reverse_slice)      - 10 элементов
 # 1    0.000    0.000    0.000    0.000 task1.py:107(reverse_slice)      - 100 элементов
 # 1    0.000    0.000    0.000    0.000 task1.py:107(reverse_slice)      - 1 000 элементов
 # 1    0.002    0.002    0.002    0.002 task1.py:107(reverse_slice)      - 10 000 элементов
+
+
+# deque
+def reverse_deque(n):
+    # для расчета времени выполнения алгоритма
+    n_num = N[n]
+
+    # для проверки работы функции тестом
+    # n_num = [i + 1 for i in range(n)]
+    # n_num = int("".join(map(str, n_num)))
+
+    n_rev = deque(str(n_num))
+    n_rev.reverse()
+    return int(''.join(n_rev))
+
+# 100 loops, best of 3: 2.49 usec per loop       - 10 элементов
+# 100 loops, best of 3: 4.86 usec per loop       - 100 элементов
+# 100 loops, best of 3: 44.3 usec per loop       - 1 000 элементов
+# 100 loops, best of 3: 1.64 msec per loop       - 10 000 элементов
+
+# cProfile.run('reverse_deque(3)')
+# 1    0.000    0.000    0.000    0.000 task1.py:134(reverse_deque)      - 10 элементов
+# 1    0.000    0.000    0.000    0.000 task1.py:134(reverse_deque)      - 100 элементов
+# 1    0.000    0.000    0.000    0.000 task1.py:134(reverse_deque)      - 1 000 элементов
+# 1    0.002    0.002    0.002    0.002 task1.py:134(reverse_deque)      - 10 000 элементов
 
 
 # для проверки работы функции тестом
@@ -139,10 +165,12 @@ def reverse_slice(n):
 #         print(f'Test {i} OK')
 #
 #
-# test_rev(reverse)
+# # test_rev(reverse)
 # test_rev(reverse_loop_1)
 # test_rev(reverse_loop_2)
 # test_rev(reverse_slice)
+# test_rev(reverse_deque)
+
 
 # Выводы:
 # - рекурсия сдалась на 10 000 элементов

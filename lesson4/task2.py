@@ -24,7 +24,8 @@ def prime(n):
         if (i > 10) and (i % 10 == 5):
             continue
 
-        sqrt_ = int((sqrt(i)) + 1)
+        sqrt_ = int(sqrt(i) + 1)
+        # sqrt_ = int(i**0.5 + 1)
         for j in prime_list:
             if i % j == 0:
                 break
@@ -38,11 +39,17 @@ def prime(n):
 
     return prime_list[n - 1]
 
+# с использованием sqrt
+# 100 loops, best of 3: 10.4 usec per loop      - 10 элемент
+# 100 loops, best of 3: 166 usec per loop       - 100 элемент
+# 1100 loops, best of 3: 3.21 msec per loop     - 1 000 элемент
+# 100 loops, best of 3: 69 msec per loop        - 10 000 элемент
 
-# 100 loops, best of 3: 8.91 usec per loop      - 10 элемент
-# 100 loops, best of 3: 149 usec per loop       - 100 элемент
-# 100 loops, best of 3: 2.9 msec per loop       - 1 000 элемент
-# 100 loops, best of 3: 60.7 msec per loop      - 10 000 элемент
+# с использованием **0.5
+# 100 loops, best of 3: 13.9 usec per loop      - 10 элемент
+# 100 loops, best of 3: 170 usec per loop       - 100 элемент
+# 100 loops, best of 3: 3.33 msec per loop      - 1 000 элемент
+# 100 loops, best of 3: 69.8 msec per loop      - 10 000 элемент
 
 
 # cProfile.run('prime(10)')

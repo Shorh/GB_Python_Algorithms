@@ -13,7 +13,6 @@ def enterprises(entpr=None):
         # ввод данных пользователем
         cnt = int(input('Введите количество предприятий: '))
         if cnt == 0:
-            print('Вы решили не вводить данные')
             return None
 
         for i in range(1, cnt + 1):
@@ -79,11 +78,13 @@ def test_enterprise(func):
 # more, less = enterprises(ent_dict)
 
 # Работа функции по введенным пользователем данным
-more, less = enterprises()
+try:
+    more, less = enterprises()
 
-more = ', '.join(more)
-less = ', '.join(less)
+    more = ', '.join(more)
+    less = ', '.join(less)
 
-print(f'Предприятия, чья прибыль выше среднего по году: {more}')
-print(f'Предприятия, чья прибыль ниже среднего по году: {less}')
-
+    print(f'Предприятия, чья прибыль выше среднего по году: {more}')
+    print(f'Предприятия, чья прибыль ниже среднего по году: {less}')
+except TypeError:
+    print('Вы решили не вводить данные')

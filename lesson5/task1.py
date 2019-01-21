@@ -18,13 +18,13 @@ def enterprises(entpr=None):
         for i in range(1, cnt + 1):
             name = input(f'Введите наименование предприятия {i}: ')
             for j in range(1, 5):
-                quarter = int(input(f'Прибыль за {j}-ый квартал = '))
+                quarter = int(input(f'Прибыль за {j}-й квартал = '))
                 enterprise[name][0].append(quarter)
     else:
         enterprise = entpr
 
     profit_average = 0
-    for name in enterprise.keys():
+    for name in enterprise:
         profit = sum(enterprise[name][0])
         enterprise[name].append(profit)
         profit_average += profit
@@ -74,11 +74,11 @@ def test_enterprise(func):
 # ent_dict = defaultdict(list)
 # for k, v in ent_list:
 #     ent_dict[k].append(v)
-#
-# more, less = enterprises(ent_dict)
 
-# Работа функции по введенным пользователем данным
 try:
+    # more, less = enterprises(ent_dict)
+
+    # Работа функции по введенным пользователем данным
     more, less = enterprises()
 
     more = ', '.join(more)

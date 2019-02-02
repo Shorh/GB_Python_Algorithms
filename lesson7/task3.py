@@ -14,7 +14,7 @@ LEFT = 0
 RIGHT = 100
 
 array = [random.randint(LEFT, RIGHT - 1) for _ in range(SIZE)]
-# array = [8, 8, 8, 8, 7]
+# array = [8, 8, 8, 9, 11]
 print(f'Исходный массив:\n{array}')
 
 
@@ -22,13 +22,10 @@ def med(array):
     for i in range(len(array)):
         left = 0
         right = 0
-        eq = 0
 
         for j in range(len(array)):
-            if i == j:
+            if i == j or array[j] == array[i]:
                 continue
-            if array[j] == array[i]:
-                eq += 1
             elif array[j] < array[i]:
                 left += 1
             elif array[j] > array[i]:
@@ -36,13 +33,9 @@ def med(array):
             else:
                 raise Exception('Случилось чудо!!!')
 
-        if eq % 2 == 1:
-            if left < right:
-                left += 1
-            elif left > right:
-                right += 1
+        med_len = (len(array) - 1) / 2
 
-        if left == right:
+        if left <= med_len and right <= med_len:
             return i
 
 

@@ -9,7 +9,7 @@ LEFT = -100
 RIGHT = 100
 
 array = [random.randint(LEFT, RIGHT - 1) for _ in range(SIZE)]
-print(array)
+print(f'Исходный массив:\n{array}')
 
 
 def bubble_sort(array):
@@ -28,4 +28,4 @@ def bubble_sort(array):
 
 
 bubble_sort(array)
-print(array)
+print(f'Отсортированный по убыванию массив:\n{array}')

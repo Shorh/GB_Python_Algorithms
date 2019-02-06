@@ -8,7 +8,6 @@ def haffman_tree(string):
     frequency = Counter(string)
     tree = {}
     for freq in frequency.most_common():
-        # print(f'key: {freq[0]} \t id_key: {ord(freq[0])} \t freq: {freq[1]}')
         root = Node(freq[1])
         root.left = Node(ord(freq[0]))
         if root.value in tree:
@@ -58,11 +57,17 @@ def haffman(string):
     haf_tree = haffman_tree(string)
     haf_table = haffman_table(haf_tree)
 
-    # print(tree)
-    # print(haf_table)
+    # Визуализация результатов
+    print(f'Дерево алгоритма Хаффмана:\n{haf_tree}')
+    print(f'Таблица кодировки:')
+    for freq in Counter(string).most_common():
+        print(f'key: {freq[0]} \t '
+              f'id_key: {ord(freq[0])} \t '
+              f'freq: {freq[1]} \t '
+              f'haf_code: {haf_table[freq[0]]}')
+    print()
 
     result = []
-
     for char in string:
         result.append(haf_table[char])
 
@@ -82,4 +87,5 @@ s = input('Введите строку, которую необходимо за
 # s = 'beep boop beer!'
 
 print(f'Строка в битах:\n{to_bits(s)}')
+print()
 print(f'Закодированная по алгоритму Хаффмана строка:\n{haffman(s)}')

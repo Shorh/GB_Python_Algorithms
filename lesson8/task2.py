@@ -78,13 +78,13 @@ def to_bits(string):
     result = []
     for char in string:
         bits = bin(ord(char))[2:]
-        bits = '00000000'[len(bits):] + bits
+        bits = bits.zfill(8)
         result.append(bits)
     return result
 
 
-s = input('Введите строку, которую необходимо закодировать: ')
-# s = 'beep boop beer!'
+# s = input('Введите строку, которую необходимо закодировать: ')
+s = 'beep boop beer!'
 
 print(f'Строка в битах:\n{to_bits(s)}')
 print()

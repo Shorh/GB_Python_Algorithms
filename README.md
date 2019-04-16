@@ -1,5 +1,5 @@
 # GB_Python_Algorithms
-GeekBrains. Algorithms on Python. Homeworks
+GeekBrains. Алгоритмы и структуры данных на Python
 
 - Решето Эратосфена: /lesson4/task2.py
 - Измерения времени работы с использованием timeit: /lesson4
